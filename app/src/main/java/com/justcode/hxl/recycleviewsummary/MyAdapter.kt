@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item.view.*
 
-class MyAdapter(var list: MutableList<Int>, var context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MyAdapter(var list: List<Int>, var context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         var myViewHolder: RecyclerView.ViewHolder? = null
         var view = LayoutInflater.from(context).inflate(R.layout.item, parent, false)

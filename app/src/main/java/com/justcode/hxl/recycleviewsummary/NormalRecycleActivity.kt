@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.widget.LinearLayoutManager
+import com.recycleview.smartrefresh.layout.footer.ClassicsFooter
+import com.recycleview.smartrefresh.layout.header.ClassicsHeader
 import com.recycleview.smartrefresh.layout.listener.OnRefreshListener
 import kotlinx.android.synthetic.main.activity_normal_recycle.*
 
@@ -24,6 +26,9 @@ class NormalRecycleActivity : AppCompatActivity() {
         layoutManager.orientation = LinearLayoutManager.VERTICAL //加上这句 就可以设置方向
         recycleview.setLayoutManager(layoutManager)
         recycleview.adapter = adapter
+
+        refreshlayout.setRefreshHeader(ClassicsHeader(this))
+        refreshlayout.setRefreshFooter(ClassicsFooter(this))
 
         refreshlayout.setOnRefreshListener {
             handler.postDelayed({
